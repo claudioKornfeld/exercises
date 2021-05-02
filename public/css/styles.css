@@ -198,9 +198,20 @@ input:focus {
 .cien{
     width: 100%;
 }
+ .r1 {width: 100%; display: flex; justify-content: space-between; margin: 10px;}
+ .r2 {width: 100%; display: flex; justify-content: space-between; }
+ .left50 {flex: 1 1 40%; align-items: center; }
+ .right50{flex: 1 1 60%; align-items: center; padding-left: 25px; }
+ .left20 {flex: 1 1 20%; align-items: center; }
+ .right80{flex: 1 1 80%; align-items: center; padding-left: 25px; }
 
-
-   
+ .right50 h1 {font-size: 35px; }
+ .right50 p {font-size: 18px; }
+ .pd_prod-precio {font-size: 18px; color: #000; font-weight: 600; padding-top: 20px; }
+ .pd_prod-desc {font-size: 18px; color: #00aa17; padding-top: 20px; }
+ .e404 {width: 30%; display: block; margin: auto; padding-top: 20px; }
+  
+ .tituloSection{font-size: 20px; padding: 20px 0px; color: #03264c;}
  /* buscador */
 .box{
     width: 100%;

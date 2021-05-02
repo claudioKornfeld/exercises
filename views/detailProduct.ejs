@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+    <main>
+    <section>
+       <div class="r1"><div class="left50"><img src="/img/img-macbook-pro-2019.jpg" alt=""></div>
+       <div class="right50">
+        <h1>MacBook Pro 2019</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem quos culpa veniam assumenda ipsa porro.Autem quos culpa veniam assumenda ipsa porro.</p>
+        <p class="pd_prod-precio">$230000</p>
+        <p class="pd_prod-desc">10% OFF</p>
+        <br><br>
+        <div class="r2"><div class="left20"><form action="/products/:id?_method=DELETE" method="POST" class="create-form" id="eliminar">
+            <button type="submit" class="boton">Eliminar</button></form></div>
+            <div class="right80"><form action="/products?_method=PUT" method="POST" class="create-form" id="editar">
+                <button type="submit" class="boton">Editar</button></form></div>
+            </div>
+        
+        
+        </div></div>
+    </section>
+</main>
+<br><br><br>
+<%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+
+    <body>
+        <%- include('partials/header') %>
+            <main>
+                <section id="ultimaVisita">
+                    <h3>Listado de Products</h3>
+                    <div class="products">
+                        <% listProducts.forEach(product => { %>
+                            <%- include('partials/listProducts', { product }) %>
+                                <% })%>
+                    </div>
+                </section>
+            </main>
+
+            <%- include('partials/footer') %>
+    </body>
+
+</html>

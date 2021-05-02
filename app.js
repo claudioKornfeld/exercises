@@ -1,34 +1,33 @@
-const express = require ('express');
+const express = require('express');
 const app = express();
 const puerto = process.env.PORT;
-const path = require ('path');
+const path = require('path');
 
-// le decimos cual es la carpeta publica
-const publicPath = path.join(__dirname, './public');
+const homeRouter = require('./routes/homeRouter');
+const userRouter = require('./routes/userRouter');
+const productRouter = require('./routes/productRouter')
+
 // para que encuentre las imagenes y css
 app.use(express.static('public'));
-
+// configuro EJS
 app.set('view engine', 'ejs')
 
-app.get('/', (req, res) =>
-res.render('home')
-);
+// llamo al ruteo
+app.use('/', homeRouter);
+app.use('/products', productRouter);
+//app.use('/', userRouter);
 
-app.get('/home', (req, res) =>
-res.render('home')
-);
 
 app.get('/login', (req, res) =>
-res.render('login')
+    res.render('login')
 );
-
 app.get('/register', (req, res) =>
-res.render('register')
+    res.render('register')
 );
 
-app.get('/producto', (req, res) =>
-res.render('producto')
-);
+app.use((req, res, next) => {
+    res.status(404).render('error404')
+});
 
 app.listen(puerto || 3030, function() {
     console.log("Servidor corriendo en el puerto 3030");
