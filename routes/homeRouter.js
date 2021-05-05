@@ -6,12 +6,13 @@ const controladorHome = require('../controller/homeController');
 
 console.log("Entro al homeRouter que me lleva al homecontroller");
 
-router.get('/', (req, res) => {
-    // leo todo el array de produts en el controlador homeController
-    const products = controladorHome.leerTodos();
-    // envío el array product a la vista para que la recorra EJS
-    console.log('volvi del controlador con los products ya leidos')
-    res.render('home', { products });
-});
+router.get('/', controladorHome.listar);
+
+router.get('/login', (req, res) =>
+    res.render('login')
+);
+router.get('/register', (req, res) =>
+    res.render('register')
+);
 
 module.exports = router;

@@ -3,29 +3,21 @@ const router = express.Router();
 
 const productController = require('../controller/productController');
 
-router.get('/', (req, res) => {
-    const listProducts = productController.leerTodos();
-    res.render('products', { listProducts });
-});
+//hacer los get es mi tarea. con Gaby hicimos '/' y '/:id/
 
-router.get('/create', (req, res) => {
-    res.render('createProduct')
-});
+router.get('/', productController.listar); //hecho
 
-router.get('/:id', (req, res) => {
-    res.render('detailProduct')
 
-    console.log("Estoy en productRouter. con /:id Abro la pagina de detailProduct")
-        //res.send("Detalle de producto "+ req.params.id)
-})
+router.get('/create', productController.create); //hecho
 
-router.post('/', (req, res) => {
-    res.send("Trae datos del form de alta")
-})
+router.get('/:id', productController.show); //hecho
 
-router.get('/edits/:id', (req, res) => {
-    res.send("Muestra el formulario para editar el producto")
-})
+router.post('/', productController.store); // hecho parcial lo estoy guardando en el JSON, pero no lo veo x pantalla
+
+router.get('/edits/:id', productController.edit); //hecho pero hay una diferencia con el modelo final de Gaby.Revisar
+
+
+//Hasta aca llegue.
 
 router.put('/', (req, res) => {
     res.send("Modificar producto")

@@ -18,16 +18,16 @@ app.use('/products', productRouter);
 //app.use('/', userRouter);
 
 
-app.get('/login', (req, res) =>
+/*app.get('/login', (req, res) =>
     res.render('login')
 );
 app.get('/register', (req, res) =>
     res.render('register')
-);
+);*/
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
     res.status(404).render('error404')
-});
+});*/
 
 app.listen(puerto || 3030, function() {
     console.log("Servidor corriendo en el puerto 3030");
